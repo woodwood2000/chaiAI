@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { nextOpen } from '../data/workshops'
+import ContactEmail from './ContactEmail'
 
 export default function Footer() {
   const nx = nextOpen()
@@ -30,8 +31,10 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <div className="mt-10 pt-6 border-t border-black/[.06] flex flex-col md:flex-row justify-between gap-2 text-[12px] text-[#86868b]">
-          <span>© 2026 杨辉（玄龙堂主理人） · 微信 ikoning365 · 邮箱 554176937@qq.com</span>
+        <div className="mt-10 pt-6 border-t border-black/[.06] flex flex-col md:flex-row justify-between gap-3 text-[12px] text-[#86868b]">
+          <span className="inline-flex flex-wrap items-center gap-x-2 gap-y-1">
+            © 2026 · 联系我：<ContactEmail />
+          </span>
           <span>方法论支持：拆书帮（chaishubang.net） · 拆为己用</span>
         </div>
       </div>
