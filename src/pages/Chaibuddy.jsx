@@ -1,3 +1,4 @@
+import asset from '../lib/asset'
 import { motion } from 'framer-motion'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import skills from '../data/skills'
@@ -422,7 +423,7 @@ export default function Chaibuddy() {
   }
 
   useEffect(() => {
-    fetch('/chaibuddy/people.json')
+    fetch(asset('/chaibuddy/people.json'))
       .then(r => (r.ok ? r.json() : Promise.reject(new Error('http ' + r.status))))
       .then(setData)
       .catch(() => setLoadErr(true))
@@ -738,7 +739,7 @@ export default function Chaibuddy() {
                 >
                   <div className={`relative rounded-2xl overflow-hidden mb-6 border ${cat.border} group cursor-pointer`}>
                     <img
-                      src={`/images/hd/category-${cat.id}.png`}
+                      src={asset(`/images/hd/category-${cat.id}.png`)}
                       alt={cat.title}
                       className="w-full h-48 md:h-56 object-cover group-hover:scale-[1.02] transition-transform duration-700"
                     />
@@ -757,7 +758,7 @@ export default function Chaibuddy() {
                     {group.items.map((item, i) => (
                       <motion.a
                         key={`${item.slug}-${i}`}
-                        href={`/images/skills/${encodeURIComponent(item.slug)}.html`}
+                        href={asset(`/images/skills/${encodeURIComponent(item.slug)}.html`)}
                         target="_blank"
                         rel="noopener noreferrer"
                         initial={{ opacity: 0, y: 10 }}

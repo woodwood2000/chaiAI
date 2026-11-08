@@ -1,3 +1,4 @@
+import asset from '../lib/asset'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 
@@ -80,7 +81,7 @@ export default function About() {
         >
           {/* Avatar and name */}
           <div className="text-center mb-12">
-            <img src="/images/loong-logo.svg" alt="玄龙 logo" className="w-24 h-auto mx-auto mb-4" />
+            <img src={asset('/images/loong-logo.svg')} alt="玄龙 logo" className="w-24 h-auto mx-auto mb-4" />
             <h1 className="text-3xl md:text-4xl font-black text-[#1d1d1f] mb-2">杨辉</h1>
             <p className="text-neon-purple font-medium">心光成长中心 · 企业 AI 落地教练 · 拆书帮三级拆书家</p>
           </div>
@@ -172,7 +173,7 @@ export default function About() {
             <h2 className="text-xl font-bold text-[#1d1d1f] mb-4">个人微信公众号</h2>
             <div className="flex flex-col sm:flex-row items-center gap-6">
               <img
-                src="/images/gzh-qr.png"
+                src={asset('/images/gzh-qr.png')}
                 alt="公众号「AI创新增长杨教练」二维码"
                 className="w-44 h-44 rounded-xl border border-dark-border bg-white"
               />
@@ -190,7 +191,7 @@ export default function About() {
             <h2 className="text-xl font-bold text-[#1d1d1f] mb-4">拆AI 企业微信讨论群</h2>
             <div className="flex flex-col sm:flex-row items-center gap-6">
               <img
-                src="/images/wecom-group-qr.png"
+                src={asset('/images/wecom-group-qr.png')}
                 alt="拆AI 企业微信讨论群二维码"
                 className="w-44 h-44 rounded-xl border border-dark-border bg-white"
                 onError={(e) => { e.currentTarget.style.display = 'none'; }}

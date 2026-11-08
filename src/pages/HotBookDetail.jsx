@@ -1,3 +1,4 @@
+import asset from '../lib/asset'
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
@@ -74,7 +75,7 @@ export default function HotBookDetail() {
           <div className="flex flex-col md:flex-row gap-6">
             <div className="w-32 h-44 shrink-0 mx-auto md:mx-0 rounded-xl overflow-hidden bg-dark-card-hover">
               {book.image ? (
-                <img src={book.image} alt={book.title} className="w-full h-full object-cover"
+                <img src={asset(book.image)} alt={book.title} className="w-full h-full object-cover"
                   onError={e => {
                     const img = e.target
                     if (book.imageFallback && !img.dataset.fb) {

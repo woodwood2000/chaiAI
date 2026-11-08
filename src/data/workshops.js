@@ -218,4 +218,12 @@ export const seriesIntro = (() => {
   return `${lead}${mid}；其余全部开放投票——点「我支持」，支持数高的先开。想拆的在列表里没有？加微信 ikoning365 告诉我。`
 })()
 
+// 部署在子路径（GitHub Pages /chaiAI/）时给站内静态页链接补前缀
+const __BASE_PREFIX__ = (import.meta.env.BASE_URL || '/').replace(/\/$/, '')
+for (const w of workshops) {
+  for (const k of ['link', 'guide']) {
+    if (typeof w[k] === 'string' && w[k].startsWith('/')) w[k] = __BASE_PREFIX__ + w[k]
+  }
+}
+
 export default workshops

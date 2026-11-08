@@ -1,3 +1,4 @@
+import asset from '../lib/asset'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import levels from '../data/learningPath'
@@ -125,7 +126,7 @@ export default function LearningPath() {
                 {/* CTA：在线自评 */}
                 <div className="flex flex-wrap gap-3">
                   <a
-                    href={`/tf-assess/#${level.id}`}
+                    href={asset(`/tf-assess/#${level.id}`)}
                     className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r ${level.color} text-white text-sm font-bold hover:shadow-lg transition-all`}
                   >
                     在线自评 · {level.range.split(' ')[0]}
@@ -255,7 +256,7 @@ export default function LearningPath() {
                       </svg>
                     </Link>
                     <a
-                      href="/tf-assess/#ai"
+                      href={asset('/tf-assess/#ai')}
                       className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl glass text-[#424245] text-sm font-medium hover:text-[#1d1d1f] transition-all border border-violet-500/20"
                     >
                       在线自评 · RIA 拆 AI

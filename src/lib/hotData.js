@@ -1,6 +1,7 @@
+import asset from './asset'
 /** fetchJSON — 透明解压 .gz JSON（DecompressionStream，现代浏览器原生） */
 export default async function fetchJSON(path) {
-  const res = await fetch(path)
+  const res = await fetch(asset(path))
   if (!res.ok) throw new Error(`HTTP ${res.status}`)
   if (path.endsWith('.gz')) {
     if (typeof DecompressionStream === 'undefined') throw new Error('gzip unsupported')

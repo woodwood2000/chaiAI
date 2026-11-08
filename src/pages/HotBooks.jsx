@@ -1,3 +1,4 @@
+import asset from '../lib/asset'
 import { useState, useEffect, useMemo, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
@@ -211,7 +212,7 @@ function BookCover({ book, size = 'md' }) {
     <div className={`${cls} shrink-0 rounded-lg overflow-hidden bg-dark-card-hover`}>
       {book.image ? (
         <img
-          src={book.image}
+          src={asset(book.image)}
           alt={book.title}
           loading="lazy"
           className="w-full h-full object-cover"
